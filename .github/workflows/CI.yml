@@ -1,0 +1,17 @@
+name: CI
+on: push
+
+jobs:
+  quality-assurance:
+    name: Quality Assurance
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Install dependencies
+      run: make setup
+
+    - name: Run tests
+      run: make test
+
+    - name: Run linter
+      run: make lint
